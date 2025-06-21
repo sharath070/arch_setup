@@ -2,17 +2,15 @@
   "$schema": "/etc/xdg/swaync/configSchema.json",
   "positionX": "right",
   "positionY": "top",
-  "cssPriority": "user",
+	"cssPriority": "user",
 
   "control-center-width": 330,
-  "control-center-height": 650,
+  "control-center-height": 650, 
   "control-center-margin-top": 2,
   "control-center-margin-bottom": 2,
   "control-center-margin-right": 1,
   "control-center-margin-left": 0,
 
-  "notification-body-text-size": 11,
-  "notification-header-text-size": 12,
   "notification-window-width": 400,
   "notification-icon-size": 48,
   "notification-body-image-height": 160,
@@ -21,7 +19,7 @@
   "timeout": 4,
   "timeout-low": 2,
   "timeout-critical": 6,
-
+  
   "fit-to-screen": false,
   "keyboard-shortcuts": true,
   "image-visibility": "when-available",
@@ -42,7 +40,14 @@
       "app-name": "Spotify"
     }
   },
-  "widgets": ["buttons-grid", "mpris", "title", "dnd", "notifications"],
+  "widgets": [
+    "label",
+    "buttons-grid",
+    "mpris",
+    "title",
+    "dnd",
+    "notifications"
+  ],
   "widget-config": {
     "title": {
       "text": "Notifications",
@@ -52,33 +57,41 @@
     "dnd": {
       "text": "Do not disturb"
     },
+    "label": {
+      "max-lines": 1,
+      "text": " "
+    },
     "mpris": {
-      "image-size": 40,
+      "image-size": 96,
       "image-radius": 12
     },
     "volume": {
       "label": "󰕾",
-      "show-per-app": true
+        "show-per-app": true
     },
     "buttons-grid": {
       "actions": [
         {
-          "label": " ",
-          "command": "pavucontrol"
+          "label": " ",
+          "command": "amixer set Master toggle"
         },
         {
-          "label": "󰂯",
-          "command": "blueman-manager"
+          "label": "",
+          "command": "amixer set Capture toggle"
         },
         {
           "label": " ",
           "command": "nm-connection-editor"
         },
         {
-          "label": "󰾅",
-          "command": "~/.config/hypr/scripts/pwrProfiles.sh toggle",
-          "type": "command"
+          "label": "󰂯",
+          "command": "blueman-manager"
+        },
+        {
+          "label": "󰏘",
+          "command": "nwg-look"
         }
+        
       ]
     }
   }

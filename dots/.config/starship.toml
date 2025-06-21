@@ -4,3 +4,6 @@ $git_branch\
 $git_status\
 $line_break\
 $character"""
+
+[git_branch]
+symbol = " "

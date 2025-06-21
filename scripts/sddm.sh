@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sudo dnf -y install sddm qt6-qtsvg qt6-qtvirtualkeyboard qt6-qtmultimedia
+sudo pacman -S --noconfirm --needed sddm qt6-svg qt6-virtualkeyboard qt6-multimedia-ffmpeg
 
 sudo systemctl enable sddm.service
 

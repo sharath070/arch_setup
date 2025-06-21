@@ -12,6 +12,6 @@ bind \ca forward-char
 
 set -g fish_greeting ""
 
-# starship init fish | source
+starship init fish | source
 
-# nerdfetch
+turbofetch

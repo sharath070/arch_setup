@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # set gtk themes
-sudo dnf install gtk-murrine-engine
+sudo pacman -S --needed --noconfirm gtk-engine-murrine
 cd ~
 mkdir .themes/
 git clone https://github.com/Fausto-Korpsvart/Tokyonight-GTK-Theme.git
@@ -16,7 +16,7 @@ gsettings set org.gnome.desktop.interface gtk-theme Tokyonight-Dark-Compact
 git clone https://github.com/bikass/kora.git
 mkdir -p $HOME/.local/share/icons/
 mv kora/kora/ $HOME/.local/share/icons/
-sudo flatpak override --filesystem=$HOME/.icons
+# sudo flatpak override --filesystem=$HOME/.icons
 gsettings set org.gnome.desktop.interface icon-theme kora
 rm -rf kora
 

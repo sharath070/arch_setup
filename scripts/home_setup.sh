@@ -10,7 +10,7 @@ systemctl start bluetooth.service
 cd $HOME/.dotfiles/dots/
 stow --target="$HOME" .
 
-# set wallpaper
-destination="$HOME/.cache/swww/eDP-1"
-mkdir -p "$(dirname "$destination")"
-echo "$HOME/.dotfiles/.config/Pictures/tokyonight/street-tn.png" >> "$destination"
+# setup wallpaper
+source ./swww.sh
+
+curl -ffSL https://raw.githubusercontent.com/ajTronic/turbofetch/main/install.sh | sh

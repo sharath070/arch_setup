@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-wallDIR="$HOME/.dotfiles/.config/Pictures/tokyonight"
+wallDIR="$HOME/.dotfiles/.misc/Pictures/tokyonight"
 cache_dir="$HOME/.config/hypr/.cache"
 themes_dir="$HOME/.config/hypr/.cache/colors"
 

@@ -4,19 +4,18 @@ DEV_PKGS=(
   neovim
   tmux
   lazygit
-  go
   hurl
   sqlc
   nodejs
   pnpm
   code
 )
-sudo pacman -S --noconfirm "${DEV_PKGS[@]}"
+sudo pacman -S --needed --noconfirm "${DEV_PKGS[@]}"
 
 DEV_AUR=(
   goose-bin
 )
-yay -S --noconfirm "${DEV_AUR[@]}"
+yay -S --needed --noconfirm "${DEV_AUR[@]}"
 
 # setup postgres
   # postgresql-server

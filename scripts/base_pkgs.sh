@@ -7,8 +7,9 @@ PACKAGES=(
   openssh
   openssl
   ripgrep
-  fd-find
+  fd
   bat
+  less
   xdg-user-dirs
   gvfs-mtp
   mate-polkit
@@ -26,17 +27,16 @@ PACKAGES=(
   cava
   btop
   fastfetch
-  mediawriter
   brightnessctl
   playerctl
   network-manager-applet
   mpv
   blueman
   cargo
+  go
   stow
   pavucontrol
-  dnf-plugins-core
-  Thunar
+  thunar
   thunar-volman
   thunar-archive-plugin
   thunar-media-tags-plugin
@@ -48,6 +48,8 @@ PACKAGES=(
   7zip
   poppler
   zoxide
+  bc
+  man-db
   imagemagick
   ghostty
   ttf-jetbrains-mono-nerd

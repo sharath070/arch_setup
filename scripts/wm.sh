@@ -10,9 +10,13 @@ HYPR_PKGS=(
   cliphist
   swaync
   rofi-wayland
-  wlogout
   nwg-look
   swww
 )
 
-sudo pacman -S --noconfirm "${HYPR_PKGS[@]}"
+sudo pacman -S --needed --noconfirm "${HYPR_PKGS[@]}"
+
+HYPR_AUR=(
+  wlogout
+)
+yay -S --needed --noconfirm "${HYPR_PKGS[@]}"
