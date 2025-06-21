@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+
+PACKAGES=(
+  base-devel
+  wget
+  ufw
+  openssh
+  openssl
+  ripgrep
+  fd-find
+  bat
+  xdg-user-dirs
+  gvfs-mtp
+  mate-polkit
+  libmtp
+  bluez
+  bluez-tools
+  zsh
+  fish
+  curl
+  unzip
+  lsd
+  tealdeer
+  jq
+  fzf
+  cava
+  btop
+  fastfetch
+  mediawriter
+  brightnessctl
+  playerctl
+  network-manager-applet
+  mpv
+  blueman
+  cargo
+  stow
+  pavucontrol
+  dnf-plugins-core
+  Thunar
+  thunar-volman
+  thunar-archive-plugin
+  thunar-media-tags-plugin
+  wf-recorder
+  libnotify
+  gtk3
+  ffmpeg
+  yazi
+  7zip
+  poppler
+  zoxide
+  imagemagick
+  ghostty
+  ttf-jetbrains-mono-nerd
+  ttf-cascadia-code
+  ttf-fira-code
+)
+
+sudo pacman -S --noconfirm --needed "${PACKAGES[@]}"
