@@ -65,9 +65,6 @@ return {
 					referencesCodeLens = {
 						enabled = true,
 					},
-					preferences = {
-						quoteStyle = "double",
-					},
 					suggest = {
 						completeFunctionCalls = true,
 					},
@@ -86,7 +83,7 @@ return {
 			commands = {
 				OrganizeImports = {
 					function()
-						vim.lsp.buf.execute_command({
+						vim.lsp.buf_request(0, "workspace/executeCommand", {
 							command = "_typescript.organizeImports",
 							arguments = { vim.api.nvim_buf_get_name(0) },
 						})
@@ -147,6 +144,18 @@ return {
 				syntaxProfiles = {},
 				variables = {},
 			},
+		})
+
+		lspconfig.html.setup({
+			capabilities = capabilities,
+		})
+
+		lspconfig.cssls.setup({
+			capabilities = capabilities,
+		})
+
+		lspconfig.marksman.setup({
+			capabilities = capabilities,
 		})
 
 		vim.api.nvim_create_autocmd("LspAttach", {

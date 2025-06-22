@@ -26,6 +26,11 @@ PACKAGES=(
   fzf
   cava
   btop
+  pipewire
+  wireplumber
+  xdg-desktop-portal
+  xdg-desktop-portal-gtk
+  xdg-desktop-portal-hyprland
   fastfetch
   brightnessctl
   playerctl

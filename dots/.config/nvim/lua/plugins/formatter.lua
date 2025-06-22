@@ -16,12 +16,15 @@ return {
 			json = { "prettierd", "prettier", stop_after_first = true },
 			jsonc = { "prettierd", "prettier", stop_after_first = true },
 			go = { "goimports", "gofumpt" },
-			nix = { "alejandra" },
 		},
 		formatters = {
 			prettier = {
 				-- This ensures project config files like .prettierrc are respected
 				prepend_args = { "--config-precedence", "prefer-file" },
+				args = function(ctx)
+					return { ctx.filename }
+				end,
+				stdin = true,
 			},
 		},
 		format_on_save = {

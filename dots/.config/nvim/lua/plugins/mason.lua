@@ -12,6 +12,7 @@ return {
 				"lua-language-server",
 				"html-lsp",
 				"css-lsp",
+				"typescript-language-server",
 				"tailwindcss-language-server",
 				"gopls",
 				"emmet-language-server",
@@ -20,7 +21,7 @@ return {
 				"prettierd",
 				"stylua",
 				"gofumpt",
-				"goimports-reviser",
+				"goimports",
 				"eslint_d",
 			},
 		})
