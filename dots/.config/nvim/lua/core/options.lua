@@ -84,6 +84,7 @@ vim.diagnostic.config({
 	float = {
 		border = "rounded",
 	},
+	update_in_insert = true,
 })
 
 local signs = {

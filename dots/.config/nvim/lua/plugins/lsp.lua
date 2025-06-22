@@ -96,8 +96,7 @@ return {
 			},
 		})
 
-		-- Svelte LSP
-		local svelte_lsp_capabilities = vim.tbl_deep_extend("force", capabilities, {
+		local svelte_lsp_capabilities = vim.tbl_deep_extend("force", {}, capabilities, {
 			workspace = { didChangeWatchedFiles = false },
 		})
 		lspconfig.svelte.setup({
@@ -121,6 +120,33 @@ return {
 		lspconfig.qmlls.setup({
 			cmd = { "qmlls", "-E" },
 			capabilities = capabilities,
+		})
+
+		lspconfig.emmet_language_server.setup({
+			capabilities = capabilities,
+			filetypes = {
+				"css",
+				"eruby",
+				"html",
+				"javascript",
+				"javascriptreact",
+				"less",
+				"sass",
+				"scss",
+				"pug",
+				"typescriptreact",
+			},
+			init_options = {
+				includeLanguages = {},
+				excludeLanguages = {},
+				extensionsPath = {},
+				preferences = {},
+				showAbbreviationSuggestions = true,
+				showExpandedAbbreviation = "always",
+				showSuggestionsAsSnippets = false,
+				syntaxProfiles = {},
+				variables = {},
+			},
 		})
 
 		vim.api.nvim_create_autocmd("LspAttach", {
