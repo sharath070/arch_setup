@@ -20,6 +20,7 @@ return {
 		local capabilities = require("blink.cmp").get_lsp_capabilities(lsp_capabilities)
 
 		lspconfig.lua_ls.setup({
+			capabilities = capabilities,
 			settings = {
 				Lua = {
 					runtime = { version = "LuaJIT" },
@@ -33,7 +34,9 @@ return {
 			},
 		})
 
-		lspconfig.gopls.setup({})
+		lspconfig.gopls.setup({
+			capabilities = capabilities,
+		})
 
 		lspconfig.ts_ls.setup({
 			capabilities = capabilities,
@@ -94,8 +97,9 @@ return {
 		})
 
 		-- Svelte LSP
-		local svelte_lsp_capabilities = vim.tbl_deep_extend("force", {}, capabilities)
-		svelte_lsp_capabilities.workspace = { didChangeWatchedFiles = false }
+		local svelte_lsp_capabilities = vim.tbl_deep_extend("force", capabilities, {
+			workspace = { didChangeWatchedFiles = false },
+		})
 		lspconfig.svelte.setup({
 			capabilities = svelte_lsp_capabilities,
 			filetypes = { "svelte" },
@@ -110,10 +114,13 @@ return {
 			},
 		})
 
-		lspconfig.tailwindcss.setup({})
+		lspconfig.tailwindcss.setup({
+			capabilities = capabilities,
+		})
 
 		lspconfig.qmlls.setup({
 			cmd = { "qmlls", "-E" },
+			capabilities = capabilities,
 		})
 
 		vim.api.nvim_create_autocmd("LspAttach", {
