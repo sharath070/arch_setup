@@ -25,11 +25,26 @@ return {
 				scrollbar = false,
 				border = "rounded",
 			},
+			trigger = {
+				show_on_keyword = true,
+				show_on_trigger_character = true,
+				show_on_blocked_trigger_characters = { "$", "'", '"', "(", "{", "[" },
+				show_on_x_blocked_trigger_characters = { "$", "'", '"', "(", "{", "[" },
+			},
 		},
 
 		snippets = { preset = "luasnip" },
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer" },
+			per_filetype = {
+				svelte = { "lsp", "snippets", "path", "buffer" },
+			},
+			providers = {
+				lsp = {
+					name = "LSP",
+					module = "blink.cmp.sources.lsp",
+				},
+			},
 		},
 
 		fuzzy = { implementation = "prefer_rust_with_warning" },

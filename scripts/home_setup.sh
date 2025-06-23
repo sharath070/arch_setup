@@ -7,8 +7,10 @@ chsh -s $(which fish)
 systemctl enable bluetooth.service
 systemctl start bluetooth.service
 
+xdg-user-dirs-update
+
 cd $HOME/.dotfiles/dots/
-stow --target="$HOME" .
+stow .
 
 # setup wallpaper
 source ./swww.sh

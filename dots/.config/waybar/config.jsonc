@@ -262,6 +262,8 @@
     "on-click-release": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true,
+    "tooltip": true,
+    "tooltip-format": " Notification Center",
   },
   "custom/clipboard": {
     "format": "{}",

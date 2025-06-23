@@ -28,9 +28,6 @@ PACKAGES=(
   btop
   pipewire
   wireplumber
-  xdg-desktop-portal
-  xdg-desktop-portal-gtk
-  xdg-desktop-portal-hyprland
   fastfetch
   brightnessctl
   playerctl
@@ -38,7 +35,6 @@ PACKAGES=(
   mpv
   blueman
   cargo
-  go
   stow
   pavucontrol
   thunar
@@ -49,17 +45,14 @@ PACKAGES=(
   libnotify
   gtk3
   ffmpeg
-  yazi
   7zip
   poppler
   zoxide
   bc
   man-db
   imagemagick
-  ghostty
-  ttf-jetbrains-mono-nerd
-  ttf-cascadia-code
-  ttf-fira-code
+  google-noto-fonts
+  google-noto-emoji-fonts 
 )
 
-sudo pacman -S --noconfirm --needed "${PACKAGES[@]}"
+sudo dnf install -y "${PACKAGES[@]}"

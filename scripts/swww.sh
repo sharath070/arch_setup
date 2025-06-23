@@ -1,7 +1,5 @@
 #! /usr/bin/env bash
 
-# Run this during dotfiles installation/setup
-
 CACHE_DIR="$HOME/.cache/swww"
 DEFAULT_WALLPAPER="$HOME/.dotfiles/.misc/Pictures/tokyonight/street-tn.png"
 
@@ -25,3 +23,5 @@ for MONITOR in "${COMMON_MONITORS[@]}"; do
     CACHE_FILE="$CACHE_DIR/$MONITOR"
     printf "Lanczos3\n%s" "$DEFAULT_WALLPAPER" > "$CACHE_FILE"
 done
+
+ln -s "$DEFAULT_WALLPAPER" ~/.config/hypr/.cache/current_wallpaper.png

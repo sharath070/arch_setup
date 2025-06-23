@@ -16,7 +16,7 @@ return {
 				"tailwindcss-language-server",
 				"gopls",
 				"emmet-language-server",
-				"marksman",
+				"markdown-oxide",
 				"svelte-language-server",
 				"prettierd",
 				"stylua",

@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+dnf copr enable solopasha/hyprland 
+dnf copr enable leloubil/wl-clip-persist
+
 HYPR_PKGS=(
   hyprland
   hyprlock
@@ -12,11 +15,10 @@ HYPR_PKGS=(
   rofi-wayland
   nwg-look
   swww
-)
-
-sudo pacman -S --needed --noconfirm "${HYPR_PKGS[@]}"
-
-HYPR_AUR=(
   wlogout
+  xdg-desktop-portal
+  xdg-desktop-portal-gtk
+  xdg-desktop-portal-hyprland
 )
-yay -S --needed --noconfirm "${HYPR_PKGS[@]}"
+
+sudo dnf install -y "${HYPR_PKGS[@]}"

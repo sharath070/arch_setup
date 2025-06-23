@@ -1,7 +1,9 @@
-@define-color text            @foreground;
-@define-color background-alt  @color1;
-@define-color selected        @color3;
-@define-color hover           @color5;
+@define-color text            #D5D6DB;
+@define-color background-alt  #1A1B26;
+@define-color selected        #82aaff;
+@define-color hover           alpha(#B4F9F8, .5);
+@define-color border-sec      #2f3549;
+@define-color bg-sec          #444b6a;
 @define-color urgent          @color2;
 
 * {
@@ -11,7 +13,8 @@
   /*urgent:                @color6;      Urgency critical */
   /*text-selected:         @background; */
 
-  color: @text;
+  /* color: @text; */
+  color: red;
 
   all: unset;
   font-size: 14px;
@@ -32,6 +35,12 @@
   border-radius: 24px;
   margin: 16px;
   padding: 0;
+}
+
+.notification {
+  .text-button {
+    color: blue;
+  }
 }
 
 .floating-notifications.background

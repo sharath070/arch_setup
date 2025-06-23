@@ -1,24 +1,22 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-sudo pacman -Syu
+echo -e "fastestmirror=True\nmax_parallel_downloads=10" | sudo tee -a /etc/dnf/dnf.conf >> /dev/null/
+
+sudo dnf upgrade
 
 source ./scripts/base_pkgs.sh
 
-sudo sed -i \
-  -e 's/^#Color/Color/' \
-  -e 's/^ParallelDownloads = 5/ParallelDownloads = 10/' \
-  /etc/pacman.conf
+source ./scripts/wm.sh
 
-# here `a` is like append thing
-sudo sed -i '/^\[options\]/a\ILoveCandy' /etc/pacman.conf
-
-source ./scripts/aur_setup.sh
+source ./scripts/media_codecs.sh
 
 source ./scripts/theme.sh
 
-source ./scripts/home_setup.sh
-
 source ./scripts/dev_setup.sh
+
+source ./scripts/sddm.sh
+
+source ./scripts/home_setup.sh
 
 sudo reboot now
