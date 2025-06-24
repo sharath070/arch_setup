@@ -185,15 +185,13 @@ slider {
 }
 
 .control-center .notification-row .notification-background {
-  border-radius: 7px;
-
   background-color: @bg-alt;
   margin-top: 14px;
 }
 
 .control-center .notification-row .notification-background .notification {
   padding: 7px;
-  border-radius: 7px;
+  border-radius: 10px;
   box-shadow: inset 0 0 0 1px @border;
 }
 

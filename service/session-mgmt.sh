@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# battery-monitor
+systemctl --user daemon-reload
+systemctl --user enable battery-monitor.timer
+systemctl --user start battery-monitor.timer
+
+
 CONFIG_FILE="/etc/systemd/logind.conf"
 
 # check if the file exists
@@ -27,4 +33,5 @@ done
 
 # Restart logind to apply changes
 sudo systemctl restart systemd-logind
+
 

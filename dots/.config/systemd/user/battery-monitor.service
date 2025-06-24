@@ -1,0 +1,8 @@
+[Unit]
+Description=Battery Monitor Service
+After=graphical-session.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/scripts/battery-notify.sh
+Environment=DISPLAY=:0

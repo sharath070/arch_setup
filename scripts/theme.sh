@@ -13,13 +13,14 @@ rm -rf Tokyonight-GTK-Theme
 gsettings set org.gnome.desktop.interface gtk-theme Tokyonight-Dark-Compact
 gsettings set org.gnome.desktop.interface gtk-theme Tokyonight-Dark-Compact
 
-
 # set icons
-cp -r $HOME/.dotfiles/.misc/TokyoNight-SE/ $HOME/.local/share/icons/
+git clone https://github.com/bikass/kora.git
+mkdir -p $HOME/.local/share/icons/
+mv kora/kora/ $HOME/.local/share/icons/
 # sudo flatpak override --filesystem=$HOME/.icons
 gsettings set org.gnome.desktop.interface icon-theme kora
 gsettings set org.gnome.desktop.interface icon-theme kora
-
+rm -rf kora
 
 # set cursors
 # since i had issues with building cursors (skill issues) i just copy the downloaded file from this repo to user 
