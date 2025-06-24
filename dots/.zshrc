@@ -5,6 +5,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+if [[ -f "/opt/homebrew/bin/brew" ]] then
+  # If you're using macOS, you'll want this enabled
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -35,9 +41,10 @@ zinit snippet OMZP::archlinux
 zinit snippet OMZP::aws
 zinit snippet OMZP::kubectl
 zinit snippet OMZP::kubectx
+zinit snippet OMZP::command-not-found
 
-zstyle ':completion::complete:*' use-cache on
-zstyle ':completion::complete:*' cache-path "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompcache"
+# Load completions
+autoload -Uz compinit && compinit
 
 zinit cdreplay -q
 
@@ -46,13 +53,14 @@ zinit cdreplay -q
 
 # Keybindings
 bindkey -e
-
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+bindkey '^[w' kill-region
 bindkey '^H' backward-word
 bindkey '^L' forward-word
 bindkey '^[[1;5C' forward-word
 bindkey '^[[3;5~' kill-word
 bindkey '^[[3~' delete-char
-
 
 # History
 HISTSIZE=5000
@@ -72,10 +80,25 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-# zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-# Load completions
-autoload -Uz compinit && compinit
+# Aliases
+alias ls='ls --color'
+alias vim='nvim'
+alias c='clear'
+
+# Shell integrations
+eval "$(fzf --zsh)"
+eval "$(zoxide init --cmd cd zsh)"
+
+# Keybindings
+bindkey -e
+
+bindkey '^H' backward-word
+bindkey '^L' forward-word
+bindkey '^[[1;5C' forward-word
+bindkey '^[[3;5~' kill-word
+bindkey '^[[3~' delete-char
 
 # Aliases
 alias vim='nvim'
@@ -84,12 +107,10 @@ alias ..='cd ..'
 alias ls='lsd'
 alias ll='lsd -l'
 alias la='lsd -la'
-alias 'sudo nvim'='sudo -E nvim'
-alias anv='NVIM_APPNAME="anv" nvim'
 
 # Shell integrations
 eval "$(fzf --zsh)"
 # eval "$(zoxide init --cmd cd zsh)"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH=$PATH:$(go env GOPATH)/bin
-#nitch
+turbofetch

@@ -170,7 +170,7 @@ return {
 					vim.diagnostic.jump({ count = -1 })
 				end, opts)
 				map("n", "]d", function()
-					vim.diagnostic.jump({})
+					vim.diagnostic.jump({ count = 1 })
 				end, opts)
 
 				-- all the code in the bottom is to highlight the references

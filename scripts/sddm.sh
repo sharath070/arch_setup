@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-sudo pacman -S --noconfirm --needed sddm qt6-svg qt6-virtualkeyboard qt6-multimedia-ffmpeg
+sudo dnf sddm qt6-qtsvg qt6-qtvirtualkeyboard qt6-qtmultimedia
 
+sudo systemctl start sddm.service
 sudo systemctl enable sddm.service
 
 # incase above line doesn't start sddm reset its graphical target

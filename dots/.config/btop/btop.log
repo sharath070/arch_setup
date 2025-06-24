@@ -262,3 +262,8 @@ Use --utf-force argument to force start if you're sure your terminal can handle 
 
 2025/04/19 (19:36:05) | ===> btop++ v.1.4.0
 2025/04/19 (19:36:05) | WARNING: Intel GPU: Failed to initialize PMU
+
+2025/06/23 (17:10:54) | ===> btop++ v.1.4.0
+2025/06/23 (17:10:54) | WARNING: Intel GPU: Failed to initialize PMU
+2025/06/23 (17:10:54) | ERROR: Invalid size of hex value: 00000000
+2025/06/23 (17:11:01) | WARNING: Failed to join _runner thread on exit!

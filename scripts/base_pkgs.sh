@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 PACKAGES=(
-  base-devel
   wget
   ufw
   openssh
   openssl
+  openssl-devel
   ripgrep
   fd
   bat
@@ -31,6 +31,7 @@ PACKAGES=(
   fastfetch
   brightnessctl
   playerctl
+  powerprofilesctl
   network-manager-applet
   mpv
   blueman
@@ -45,14 +46,12 @@ PACKAGES=(
   libnotify
   gtk3
   ffmpeg
-  7zip
   poppler
   zoxide
   bc
   man-db
-  imagemagick
-  google-noto-fonts
+  google-noto-fonts-all
   google-noto-emoji-fonts 
 )
 
-sudo dnf install -y "${PACKAGES[@]}"
+sudo dnf install "${PACKAGES[@]}" -y

@@ -15,3 +15,6 @@ set -g fish_greeting ""
 starship init fish | source
 
 turbofetch
+
+set -g PATH $HOME/.cargo/bin $PATH
+set -g PATH $HOME/go/bin $PATH

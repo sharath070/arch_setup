@@ -1,14 +1,29 @@
 #! /usr/bin/env bash
 
-sudo cp ~/.dotfiles/service/kanata/kanata.service /etc/systemd/system/kanata.service
+sudo groupadd uinput
 
-sudo mkdir -p /etc/kanata/
-sudo ln -s ~/.dotfiles/service/kanata/config.kbd /etc/kanata/config.kbd
+if ! getent group input > /dev/null; then
+    sudo groupadd input
+    echo "Created group: input"
+fi
 
-sudo systemctl daemon-reload
-sudo systemctl enable kanata.service
-sudo systemctl start kanata.service
+if ! getent group uinput > /dev/null; then
+    sudo groupadd uinput
+    echo "Created group: uinput"
+fi
 
-# do this changing the config
-# sudo systemctl restart kanata.service
-# sudo systemctl status kanata.service
+sudo tee /etc/udev/rules.d/99-input.rules > /dev/null << 'EOF'
+KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
+EOF
+echo "Created /etc/udev/rules.d/99-input.rules"
+
+# Reload udev rules and trigger
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+ls -l /dev/uinput
+sudo modprobe uinput
+
+systemctl --user daemon-reload
+systemctl --user enable kanata.service
+systemctl --user start kanata.service
+systemctl --user status kanata.service
