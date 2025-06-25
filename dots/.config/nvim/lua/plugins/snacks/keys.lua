@@ -73,4 +73,10 @@ return {
 			Snacks.notifier.show_history()
 		end,
 	},
+	{
+		"<C-/>",
+		function()
+			Snacks.terminal.open()
+		end,
+	},
 }

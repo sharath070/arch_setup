@@ -3,7 +3,7 @@
 )
 
 (defsrc
-  caps tab
+  caps tab s
   ; '
   lalt
 )
@@ -16,13 +16,14 @@
 (defalias
   caps-mod (tap-hold $tap-time $hold-time lctl lctl)
   tab-mod (tap-hold $tap-time $hold-time tab lmet)
+  s-mod (tap-hold $tap-time $hold-time s lalt)
   ;-mod (tap-hold $tap-time $hold-time ; rmet)
   '-mod (tap-hold $tap-time $hold-time ' rctl)
   lalt-mod (tap-hold $tap-time $hold-time caps lalt)
 )
 
 (deflayer base
-  @caps-mod @tab-mod
+  @caps-mod @tab-mod @s-mod
   @;-mod @'-mod
   @lalt-mod
 )

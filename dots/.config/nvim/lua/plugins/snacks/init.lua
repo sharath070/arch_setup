@@ -31,6 +31,7 @@ return {
 		words = { enabled = false },
 		rename = { enabled = false },
 		zen = { enabled = false },
+		terminal = { enabled = false },
 	},
 
 	config = function(_, opts)
