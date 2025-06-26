@@ -8,8 +8,8 @@ vim.g.have_nerd_font = true
 local set = vim.opt
 
 set.expandtab = true
+set.autoindent = true
 set.tabstop = 2
-set.softtabstop = 2
 set.shiftwidth = 2
 
 set.number = true

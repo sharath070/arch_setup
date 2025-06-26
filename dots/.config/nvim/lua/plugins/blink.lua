@@ -14,6 +14,9 @@ return {
 
 		appearance = {
 			nerd_font_variant = "mono",
+			kind_icons = {
+				Color = "",
+			},
 		},
 
 		completion = {

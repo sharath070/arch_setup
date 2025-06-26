@@ -1,5 +1,6 @@
 return {
 	"stevearc/conform.nvim",
+	event = { "BufReadPre", "BufNewFile" },
 	opts = {
 		formatters_by_ft = {
 			lua = { "stylua" },
@@ -17,20 +18,10 @@ return {
 			jsonc = { "prettierd", "prettier", stop_after_first = true },
 			go = { "goimports", "gofumpt" },
 		},
-		formatters = {
-			prettier = {
-				-- This ensures project config files like .prettierrc are respected
-				prepend_args = { "--config-precedence", "prefer-file" },
-				args = function(ctx)
-					return { ctx.filename }
-				end,
-				stdin = true,
-			},
-		},
 		format_on_save = {
 			lsp_fallback = true,
 			async = false,
-			timeout_ms = 500,
+			timeout_ms = 1000,
 		},
 	},
 }

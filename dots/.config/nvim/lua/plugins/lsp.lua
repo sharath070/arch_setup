@@ -98,24 +98,19 @@ return {
 		})
 		lspconfig.svelte.setup({
 			capabilities = svelte_lsp_capabilities,
-			filetypes = { "svelte" },
-			settings = {
-				svelte = {
-					plugin = {
-						svelte = {
-							defaultScriptLanguage = "ts",
-						},
-					},
-				},
-			},
+			-- filetypes = { "svelte" },
+			-- settings = {
+			-- 	svelte = {
+			-- 		plugin = {
+			-- 			svelte = {
+			-- 				defaultScriptLanguage = "ts",
+			-- 			},
+			-- 		},
+			-- 	},
+			-- },
 		})
 
 		lspconfig.tailwindcss.setup({
-			capabilities = capabilities,
-		})
-
-		lspconfig.qmlls.setup({
-			cmd = { "qmlls", "-E" },
 			capabilities = capabilities,
 		})
 
@@ -173,7 +168,7 @@ return {
 					vim.diagnostic.jump({ count = 1 })
 				end, opts)
 
-				-- all the code in the bottom is to highlight the references
+				-- highlight the references
 				local highlight_augroup = vim.api.nvim_create_augroup("custom-lsp-highlight", { clear = false })
 				vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
 					buffer = event.buf,
