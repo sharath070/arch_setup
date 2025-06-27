@@ -56,12 +56,6 @@ return {
 		mode = "n",
 	},
 	{
-		"<leader>e",
-		function()
-			Snacks.explorer()
-		end,
-	},
-	{
 		"<leader>gi",
 		function()
 			Snacks.picker.lsp_references()

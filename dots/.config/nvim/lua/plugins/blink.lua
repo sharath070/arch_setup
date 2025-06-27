@@ -15,7 +15,7 @@ return {
 		appearance = {
 			nerd_font_variant = "mono",
 			kind_icons = {
-				Color = "",
+				-- Color = "",
 			},
 		},
 
@@ -31,7 +31,7 @@ return {
 			trigger = {
 				show_on_keyword = true,
 				show_on_trigger_character = true,
-				show_on_blocked_trigger_characters = { "$", "'", '"', "(", "{", "[" },
+				show_on_blocked_trigger_characters = { "$", " ", "\n", "\t" },
 				show_on_x_blocked_trigger_characters = { "$", "'", '"', "(", "{", "[" },
 			},
 		},
@@ -46,6 +46,7 @@ return {
 				lsp = {
 					name = "LSP",
 					module = "blink.cmp.sources.lsp",
+					opts = { tailwind_color_icon = "" },
 				},
 			},
 		},
