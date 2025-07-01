@@ -56,7 +56,7 @@ return {
 		mode = "n",
 	},
 	{
-		"<leader>gi",
+		"gi",
 		function()
 			Snacks.picker.lsp_references()
 		end,
