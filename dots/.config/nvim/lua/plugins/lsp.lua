@@ -146,8 +146,8 @@ return {
 				local bufnr = event.buf
 				local opts = { noremap = true, silent = true, buffer = bufnr }
 
-				map("n", "<leader>gd", vim.lsp.buf.definition, opts)
-				map("n", "<leader>gt", vim.lsp.buf.type_definition, opts)
+				map("n", "gd", vim.lsp.buf.definition, opts)
+				map("n", "gt", vim.lsp.buf.type_definition, opts)
 				map("n", "K", vim.lsp.buf.hover, opts)
 				map("n", "<leader>rn", vim.lsp.buf.rename, opts)
 				map("n", "<leader>ca", vim.lsp.buf.code_action, opts)
