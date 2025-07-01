@@ -38,10 +38,7 @@ return {
 
 		snippets = { preset = "luasnip" },
 		sources = {
-			default = { "lsp", "path", "snippets", "buffer" },
-			per_filetype = {
-				svelte = { "lsp", "snippets", "path", "buffer" },
-			},
+			default = { "lsp", "path", "buffer", "snippets" },
 			providers = {
 				lsp = {
 					name = "LSP",
@@ -51,7 +48,9 @@ return {
 			},
 		},
 
-		fuzzy = { implementation = "prefer_rust_with_warning" },
+		fuzzy = {
+			implementation = "prefer_rust_with_warning",
+		},
 	},
 	opts_extend = { "sources.default" },
 	signature = {
