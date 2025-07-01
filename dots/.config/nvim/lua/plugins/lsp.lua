@@ -99,15 +99,6 @@ return {
 		lspconfig.svelte.setup({
 			capabilities = svelte_lsp_capabilities,
 			filetypes = { "svelte" },
-			settings = {
-				svelte = {
-					plugin = {
-						svelte = {
-							defaultScriptLanguage = "ts",
-						},
-					},
-				},
-			},
 		})
 
 		lspconfig.tailwindcss.setup({

@@ -5,6 +5,7 @@ end
 alias ls="lsd"
 alias la="lsd -la"
 alias ll="lsd -l"
+alias npm="pnpm"
 
 bind \cw forward-word
 bind \cb backward-word
@@ -13,6 +14,7 @@ bind \ca forward-char
 set -g fish_greeting ""
 
 starship init fish | source
+zoxide init fish | source
 
 turbofetch
 

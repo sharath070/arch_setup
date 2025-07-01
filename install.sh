@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-#echo -e "fastestmirror=True\nmax_parallel_downloads=10" | sudo tee -a /etc/dnf/dnf.conf >> /dev/null
+echo -e "fastestmirror=True\nmax_parallel_downloads=10" | sudo tee -a /etc/dnf/dnf.conf >> /dev/null
 
 sudo dnf upgrade
 

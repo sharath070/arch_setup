@@ -4,11 +4,9 @@ local t = ls.text_node
 local i = ls.insert_node
 
 ls.add_snippets("svelte", {
-	s("kstate", {
-		t("let "),
+	s("kscript", {
+		t({ "<script lang='ts'>", "\t" }),
 		i(1),
-		t(" = $state("),
-		i(2),
-		t(")"),
+		t({ "", "</script>" }),
 	}),
 })

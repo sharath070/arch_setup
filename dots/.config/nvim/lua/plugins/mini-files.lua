@@ -5,7 +5,6 @@ return {
 		local mini_files = require("mini.files")
 		mini_files.setup({
 			mappings = {
-				close = "<esc>",
 				synchronize = "<leader>w",
 				reset = ".",
 			},
