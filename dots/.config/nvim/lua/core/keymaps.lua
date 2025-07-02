@@ -48,12 +48,3 @@ vim.keymap.set({ "n", "v" }, "mf", function()
 		timeout_ms = 500,
 	})
 end, { desc = "Format file or range (in visual mode)" })
-
--- harpoon replacement for my workflow.
-map("n", "<leader>a", "'A", { desc = "Jump to mark A" })
-map("n", "<leader>s", "'S", { desc = "Jump to mark S" })
-map("n", "<leader>d", "'D", { desc = "Jump to mark D" })
-map("n", "<leader>f", "'F", { desc = "Jump to mark F" })
-map("n", "<leader>j", "'J", { desc = "Jump to mark J" })
-map("n", "<leader>k", "'K", { desc = "Jump to mark K" })
-map("n", "<leader>l", "'L", { desc = "Jump to mark L" })

@@ -4,6 +4,25 @@ return {
 	config = function()
 		local mini_files = require("mini.files")
 		mini_files.setup({
+			content = {
+				filter = function(fs_entry)
+					local ignore_dirs = {
+						".git",
+						"node_modules",
+						".svelte-kit",
+						"dist",
+					}
+
+					local path = fs_entry.name
+					for _, dir in ipairs(ignore_dirs) do
+						if path == dir then
+							return false
+						end
+					end
+					-- end
+					return true
+				end,
+			},
 			mappings = {
 				synchronize = "<leader>w",
 				reset = ".",
