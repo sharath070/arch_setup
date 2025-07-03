@@ -9,7 +9,7 @@ cd Tokyonight-GTK-Theme/themes/
 ./install.sh -c dark -s compact -l --tweaks macos outline
 cd ~
 rm -rf Tokyonight-GTK-Theme
-# sudo flatpak override --filesystem=$HOME/.themes
+sudo flatpak override --filesystem=$HOME/.themes
 gsettings set org.gnome.desktop.interface gtk-theme Tokyonight-Dark-Compact
 gsettings set org.gnome.desktop.interface gtk-theme Tokyonight-Dark-Compact
 
@@ -17,7 +17,7 @@ gsettings set org.gnome.desktop.interface gtk-theme Tokyonight-Dark-Compact
 git clone https://github.com/bikass/kora.git
 mkdir -p $HOME/.local/share/icons/
 mv kora/kora/ $HOME/.local/share/icons/
-# sudo flatpak override --filesystem=$HOME/.icons
+sudo flatpak override --filesystem=$HOME/.icons
 gsettings set org.gnome.desktop.interface icon-theme kora
 gsettings set org.gnome.desktop.interface icon-theme kora
 rm -rf kora

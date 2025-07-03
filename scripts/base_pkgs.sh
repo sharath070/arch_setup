@@ -5,7 +5,6 @@ PACKAGES=(
   ufw
   openssh
   openssl
-  openssl-devel
   ripgrep
   fd
   bat
@@ -17,7 +16,6 @@ PACKAGES=(
   bluez
   bluez-tools
   zsh
-  fish
   curl
   unzip
   lsd
@@ -31,11 +29,10 @@ PACKAGES=(
   fastfetch
   brightnessctl
   playerctl
-  powerprofilesctl
+  power-profiles-daemon
   network-manager-applet
   mpv
   blueman
-  cargo
   stow
   pavucontrol
   thunar
@@ -44,14 +41,17 @@ PACKAGES=(
   thunar-media-tags-plugin
   wf-recorder
   libnotify
-  gtk3
   ffmpeg
-  poppler
   zoxide
-  bc
   man-db
-  google-noto-fonts-all
-  google-noto-emoji-fonts 
+  ttf-jetbrains-mono-nerd
+  ttf-firacode-nerd
+  noto-fonts
+  noto-fonts-cjk
+  noto-fonts-emoji
+  noto-fonts-extra
+  vivaldi
+  starship
 )
 
-sudo dnf install "${PACKAGES[@]}" -y
+sudo pacman -S --needed --noconfirm "${PACKAGES[@]}"

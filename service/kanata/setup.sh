@@ -1,4 +1,7 @@
-#! /usr/bin/env bash
+#!/usr/bin/env bash
+
+mkdir -p $HOME/.config/systemd/user/
+cp $HOME/.dotfiles/service/kanata/kanata.service $HOME/.config/systemd/user/
 
 sudo groupadd uinput
 

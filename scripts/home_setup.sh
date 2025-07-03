@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # change shell
-chsh -s $(which fish)
+chsh -s $(which zsh)
 
 # enable bluetooth
 systemctl enable bluetooth.service

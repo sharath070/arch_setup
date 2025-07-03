@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-sudo dnf copr enable solopasha/hyprland 
-sudo dnf copr enable leloubil/wl-clip-persist
-
 HYPR_PKGS=(
   hyprland
   hyprlock
@@ -10,17 +7,21 @@ HYPR_PKGS=(
   hyprshot
   hypridle
   wl-clipboard
-  wl-clip-persist
   cliphist
   swaync
   rofi-wayland
   nwg-look
   swww
-  wlogout
   xdg-desktop-portal
   xdg-desktop-portal-gtk
   xdg-desktop-portal-hyprland
   pamixer
 )
+sudo pacman -S --needed --noconfirm "${HYPR_PKGS[@]}"
 
-sudo dnf install -y "${HYPR_PKGS[@]}"
+
+HYPR_PKGS_AUR=(
+  wl-clip-persist
+  wlogout
+)
+yay -S --needed --noconfirm "${HYPR_PKGS_AUR[@]}"
